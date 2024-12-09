@@ -4,7 +4,7 @@ from dotenv import load_dotenv, find_dotenv
 import logging
 
 class DatabaseConnection:
-    def __init__(self):
+    def __init__(self, conn_str=None):
         load_dotenv(find_dotenv())
 
         self.db_driver = os.getenv("DB_DRIVER")
@@ -14,7 +14,7 @@ class DatabaseConnection:
         self.db_password = os.getenv("DB_PASSWORD")
         self.db_encrypt = os.getenv("DB_ENCRYPT")
 
-        self.conn_str = (
+        self.conn_str = conn_str or (
             f"DRIVER={{{self.db_driver}}};"
             f"SERVER={self.db_server};"
             f"DATABASE={self.db_name};"

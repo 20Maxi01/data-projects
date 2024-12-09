@@ -5,7 +5,7 @@ def create_table(cursor, table_name, df):
     try:
         column_definitions = []
         for i, column in enumerate(df.columns):
-            if i < 4:  # First four columns as NVARCHAR(50)
+            if i < 4:  # First four columns as NVARCHAR(50) this code needs to be adjusted specifically for you usage
                 column_definitions.append(f"[{column}] NVARCHAR(50)")
             else:  # Remaining columns as NVARCHAR(9)
                 column_definitions.append(f"[{column}] NVARCHAR(9)")
