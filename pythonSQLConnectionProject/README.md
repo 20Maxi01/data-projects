@@ -50,3 +50,34 @@ This project was tested and developed using the following setup:
 - [Azure Data Studio](https://learn.microsoft.com/en-us/azure-data-studio/download-azure-data-studio?view=sql-server-ver16&tabs=win-install%2Cwin-user-install%2Credhat-install%2Cwindows-uninstall%2Credhat-uninstall)
 - ```bash 
   pip install -r requirements.txt
+  
+## **Executing the script**
+The script can be executed using the command line in your project directory. Arguments that are passed via the command line override the env-file variables. 
+For further information run python main.py --help.
+```
+python main.py --help
+
+usage: main.py [-h] --file_path FILE_PATH --target_table TARGET_TABLE [--db_name DB_NAME] [--db_driver DB_DRIVER] [--db_server DB_SERVER] [--db_username DB_USERNAME] [--db_password DB_PASSWORD] [--db_encrypt DB_ENCRYPT]
+
+SQL Import Automation Tool
+
+options:
+  -h, --help            show this help message and exit
+  --file_path FILE_PATH
+                        Mandatory: Path to the input file (.csv or .xlsx)
+  --target_table TARGET_TABLE
+                        Mandatory: Target table name in SQL Server
+  --db_name DB_NAME     Database name in SQL Server (overrides .env if provided)
+  --db_driver DB_DRIVER
+                        ODBC Driver (e.g., 'ODBC Driver 18 for SQL Server')
+  --db_server DB_SERVER
+                        SQL Server address (e.g., 'localhost,1433')
+  --db_username DB_USERNAME
+                        Username for SQL Server authentication
+  --db_password DB_PASSWORD
+                        Password for SQL Server authentication
+  --db_encrypt DB_ENCRYPT
+                        Encryption option for SQL Server (e.g., 'no')
+
+Example usage: python main.py --file_path /path/to/file.xlsx --target_table TargetTableName --db_name MyDatabase
+```
