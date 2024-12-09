@@ -1,4 +1,4 @@
-# SQL Import Automation Tool
+# SQL Import Automation Tool for large Excel files
 
 This project provides a solution for importing Excel files into a Microsoft SQL Server database. The code was developed to address limitations and issues encountered with SQL Server Integration Services (SSIS) and dynamic bulk inserts when handling Excel files with more than 255 columns.
 
